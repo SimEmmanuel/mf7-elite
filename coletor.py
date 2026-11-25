@@ -110,8 +110,10 @@ def token_por_login(email: str, senha: str) -> str:
             ip = r.read().decode().strip()
 
     chaves = post("/api/apikey/list", {}).get("keys", [])
+    print(f"Login no portal OK. IP desta máquina: {ip}")
     for k in chaves:
         if ip in k.get("cidrRanges", []):
+            print("Usando chave já existente para este IP.")
             return k["key"]
 
     if len(chaves) >= 10:
@@ -124,6 +126,7 @@ def token_por_login(email: str, senha: str) -> str:
         "cidrRanges": [ip],
         "scopes": ["clash"],
     })
+    print("Nova chave criada para este IP.")
     return nova["key"]["key"]
 
 
@@ -135,7 +138,7 @@ class Api:
     def __init__(self, token: str):
         self.token = token
 
-    def get(self, path: str):
+    def get(self, path: str, obrigatorio: bool = False):
         req = urllib.request.Request(
             API_BASE + path,
             headers={"Authorization": f"Bearer {self.token}", "Accept": "application/json"},
@@ -144,19 +147,26 @@ class Api:
             with urllib.request.urlopen(req, timeout=30) as r:
                 return json.load(r)
         except urllib.error.HTTPError as e:
-            if e.code == 403:
-                corpo = e.read().decode(errors="ignore")
-                if "accessDenied.invalidIp" in corpo:
-                    sys.exit("Chave recusada: o IP desta máquina não está na chave. "
-                             "Use COC_EMAIL/COC_PASSWORD para gerar automaticamente.")
-                # warlog privado também cai aqui
-                return None
-            if e.code == 404:
-                return None
+            corpo = e.read().decode(errors="ignore")
+            try:
+                motivo = json.loads(corpo).get("reason", "")
+            except Exception:
+                motivo = corpo[:200]
+            if "invalidIp" in motivo:
+                sys.exit("ERRO: chave recusada — o IP desta máquina não está liberado na chave. "
+                         "Use COC_EMAIL/COC_PASSWORD para gerar a chave automaticamente.")
+            if motivo == "accessDenied" and obrigatorio:
+                sys.exit("ERRO: acesso negado pela API (chave inválida ou sem permissão). "
+                         f"Detalhe: {corpo[:300]}")
+            if obrigatorio:
+                dica = {404: "não existe nenhum clã/jogador com essa tag — confira a tag copiando direto do jogo.",
+                        400: "tag em formato inválido.",
+                        429: "muitas requisições, tente de novo em alguns minutos.",
+                        503: "API da Supercell em manutenção, tente mais tarde."}.get(e.code, "")
+                sys.exit(f"ERRO {e.code} ({motivo}) em {path}: {dica}")
             if e.code == 503:
-                print("API em manutenção (503). Tente mais tarde.", file=sys.stderr)
-                return None
-            raise
+                print("API em manutenção (503).", file=sys.stderr)
+            return None  # ex.: registro de guerra privado (403), sem CWL (404)
 
 
 # --------------------------------------------------------------------------
@@ -243,9 +253,8 @@ ORDEM_CARGO = {"leader": 4, "coLeader": 3, "admin": 2, "member": 1}
 def coletar(api: Api, con: sqlite3.Connection) -> None:
     t = enc(CLAN_TAG)
     em = agora()
-    clan = api.get(f"/clans/{t}")
-    if not clan:
-        sys.exit(f"Clã {CLAN_TAG} não encontrado (ou API indisponível).")
+    print(f"Buscando clã {CLAN_TAG} ...")
+    clan = api.get(f"/clans/{t}", obrigatorio=True)
 
     cur = con.execute("INSERT INTO coleta (em) VALUES (?)", (em,))
     cid = cur.lastrowid
