@@ -1,0 +1,49 @@
+# Roda o coletor a cada 30 min e publica o site no GitHub Pages.
+# Segredos necessários (Settings → Secrets and variables → Actions):
+#   COC_EMAIL e COC_PASSWORD  (login do developer.clashofclans.com)
+name: Coletar dados do clã
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: coletor
+  cancel-in-progress: false
+
+jobs:
+  coletar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Coletar
+        env:
+          COC_EMAIL: ${{ secrets.COC_EMAIL }}
+          COC_PASSWORD: ${{ secrets.COC_PASSWORD }}
+          COC_CLAN_TAG: ${{ vars.COC_CLAN_TAG }}
+        run: python3 coletor.py
+
+      - name: Salvar histórico no repositório
+        run: |
+          git config user.name "coletor-bot"
+          git config user.email "coletor-bot@users.noreply.github.com"
+          git add cla.db site/data.json
+          git diff --cached --quiet || git commit -m "Coleta $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - uses: actions/deploy-pages@v4
