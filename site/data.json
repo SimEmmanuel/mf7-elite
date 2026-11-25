@@ -1,7 +1,15 @@
 {
- "geradoEm": "2026-11-25T02:27:23Z",
+ "geradoEm": "2026-11-25T03:17:53Z",
  "exemplo": false,
  "inicioTemporada": "2026-10-26T05:00:00Z",
+ "pontosMvp": {
+  "estrela": 10,
+  "tres_estrelas": 5,
+  "cem_doacoes": 4,
+  "mil_ouro_capital": 3,
+  "cem_jogos": 2,
+  "ataque_perdido": -10
+ },
  "cla": {
   "tag": "#2U2QJJ9J8",
   "nome": "MF7 ELITE",
@@ -45,14 +53,18 @@
    "doou": 1344,
    "recebeu": 4158,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 0,
+    "trofeusGanhos": 0
+   },
+   "mvp": 53.8
   },
   {
    "tag": "#LV9LCCYLU",
@@ -66,14 +78,18 @@
    "doou": 0,
    "recebeu": 0,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 8885,
+    "trofeusGanhos": 0
+   },
+   "mvp": 26.7
   },
   {
    "tag": "#GRPPP0JG0",
@@ -87,14 +103,18 @@
    "doou": 793,
    "recebeu": 619,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 0,
+    "trofeusGanhos": 0
+   },
+   "mvp": 31.7
   },
   {
    "tag": "#890098Y2J",
@@ -108,14 +128,18 @@
    "doou": 3064,
    "recebeu": 604,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 2,
+   "tresEstrelas": 2,
    "mediaEstrelas": 3.0,
    "mediaDestruicao": 100.0,
-   "tresEstrelas": 2
+   "temporada": {
+    "estrelas": 6,
+    "ataques": 2,
+    "tres": 2,
+    "ouroCapital": 9751,
+    "trofeusGanhos": 0
+   },
+   "mvp": 221.8
   },
   {
    "tag": "#L2QRYP9UU",
@@ -129,14 +153,18 @@
    "doou": 162,
    "recebeu": 1305,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 2,
+   "tresEstrelas": 0,
    "mediaEstrelas": 1.5,
    "mediaDestruicao": 73.0,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 3,
+    "ataques": 2,
+    "tres": 0,
+    "ouroCapital": 9445,
+    "trofeusGanhos": 0
+   },
+   "mvp": 64.8
   },
   {
    "tag": "#QQYJUCCC8",
@@ -150,14 +178,18 @@
    "doou": 471,
    "recebeu": 0,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 2,
+   "tresEstrelas": 0,
    "mediaEstrelas": 2.0,
    "mediaDestruicao": 76.5,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 4,
+    "ataques": 2,
+    "tres": 0,
+    "ouroCapital": 0,
+    "trofeusGanhos": 0
+   },
+   "mvp": 58.8
   },
   {
    "tag": "#PLQ0L0289",
@@ -171,14 +203,18 @@
    "doou": 0,
    "recebeu": 216,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 4421,
+    "trofeusGanhos": 0
+   },
+   "mvp": 13.3
   },
   {
    "tag": "#RLGG9PJ8",
@@ -192,14 +228,18 @@
    "doou": 77,
    "recebeu": 0,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 0,
+    "trofeusGanhos": 0
+   },
+   "mvp": 3.1
   },
   {
    "tag": "#PUC9PVP9U",
@@ -213,14 +253,18 @@
    "doou": 666,
    "recebeu": 0,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 2,
+   "tresEstrelas": 0,
    "mediaEstrelas": 1.0,
    "mediaDestruicao": 75.0,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 2,
+    "ataques": 2,
+    "tres": 0,
+    "ouroCapital": 6957,
+    "trofeusGanhos": 0
+   },
+   "mvp": 67.5
   },
   {
    "tag": "#2G0QQ8VY",
@@ -234,14 +278,18 @@
    "doou": 12,
    "recebeu": 37,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 0,
+    "trofeusGanhos": 0
+   },
+   "mvp": 0.5
   },
   {
    "tag": "#G9PY9JQJL",
@@ -255,14 +303,18 @@
    "doou": 0,
    "recebeu": 0,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 0,
+    "trofeusGanhos": 0
+   },
+   "mvp": 0.0
   },
   {
    "tag": "#9U90UU2Q2",
@@ -276,14 +328,18 @@
    "doou": 27,
    "recebeu": 265,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 0,
+    "trofeusGanhos": 0
+   },
+   "mvp": 1.1
   },
   {
    "tag": "#GCL8PJ28Q",
@@ -297,14 +353,18 @@
    "doou": 0,
    "recebeu": 0,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 0,
+    "trofeusGanhos": 0
+   },
+   "mvp": 0.0
   },
   {
    "tag": "#L9PV9VCR0",
@@ -318,14 +378,18 @@
    "doou": 0,
    "recebeu": 67,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 0,
+    "trofeusGanhos": 0
+   },
+   "mvp": 0.0
   },
   {
    "tag": "#LLRRRRCUR",
@@ -339,14 +403,18 @@
    "doou": 0,
    "recebeu": 0,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 0,
+    "trofeusGanhos": 0
+   },
+   "mvp": 0.0
   },
   {
    "tag": "#PCUCVQV9Y",
@@ -360,14 +428,18 @@
    "doou": 36,
    "recebeu": 0,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 0,
+    "trofeusGanhos": 0
+   },
+   "mvp": 1.4
   },
   {
    "tag": "#20P820PLR",
@@ -381,14 +453,18 @@
    "doou": 356,
    "recebeu": 1,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 0,
+    "trofeusGanhos": 0
+   },
+   "mvp": 14.2
   },
   {
    "tag": "#G2UCLQQGL",
@@ -402,14 +478,18 @@
    "doou": 993,
    "recebeu": 506,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 9403,
+    "trofeusGanhos": 0
+   },
+   "mvp": 67.9
   },
   {
    "tag": "#LR9YQ9JG2",
@@ -423,14 +503,18 @@
    "doou": 0,
    "recebeu": 0,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 0,
+    "trofeusGanhos": 0
+   },
+   "mvp": 0.0
   },
   {
    "tag": "#98L2GPGYQ",
@@ -444,14 +528,18 @@
    "doou": 67,
    "recebeu": 0,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 6625,
+    "trofeusGanhos": 0
+   },
+   "mvp": 22.6
   },
   {
    "tag": "#9QVGJVVC9",
@@ -465,14 +553,18 @@
    "doou": 30,
    "recebeu": 714,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 0,
+    "trofeusGanhos": 0
+   },
+   "mvp": 1.2
   },
   {
    "tag": "#8YR2VQL8R",
@@ -486,14 +578,18 @@
    "doou": 0,
    "recebeu": 0,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 8052,
+    "trofeusGanhos": 0
+   },
+   "mvp": 24.2
   },
   {
    "tag": "#GVCRYPR2U",
@@ -507,14 +603,18 @@
    "doou": 244,
    "recebeu": 36,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 0,
+    "trofeusGanhos": 0
+   },
+   "mvp": 9.8
   },
   {
    "tag": "#Q020CV9QU",
@@ -528,14 +628,18 @@
    "doou": 579,
    "recebeu": 712,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 0,
+    "trofeusGanhos": 0
+   },
+   "mvp": 23.2
   },
   {
    "tag": "#R0U2V9RQY",
@@ -549,14 +653,18 @@
    "doou": 2842,
    "recebeu": 3063,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 11044,
+    "trofeusGanhos": 0
+   },
+   "mvp": 146.8
   },
   {
    "tag": "#GPCYUGL2R",
@@ -570,14 +678,18 @@
    "doou": 492,
    "recebeu": 238,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 3605,
+    "trofeusGanhos": 0
+   },
+   "mvp": 30.5
   },
   {
    "tag": "#2CY88R0J",
@@ -591,14 +703,18 @@
    "doou": 32,
    "recebeu": 736,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 0,
+    "trofeusGanhos": 0
+   },
+   "mvp": 1.3
   },
   {
    "tag": "#2GUC00VV2",
@@ -612,14 +728,18 @@
    "doou": 26,
    "recebeu": 67,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 0,
+    "trofeusGanhos": 0
+   },
+   "mvp": 1.0
   },
   {
    "tag": "#2JUQR0PLQ",
@@ -633,14 +753,18 @@
    "doou": 247,
    "recebeu": 26,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 11140,
+    "trofeusGanhos": 0
+   },
+   "mvp": 43.3
   },
   {
    "tag": "#8CUVR2RPC",
@@ -654,14 +778,18 @@
    "doou": 341,
    "recebeu": 487,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 0,
+    "trofeusGanhos": 0
+   },
+   "mvp": 13.6
   },
   {
    "tag": "#G0VUVRYR0",
@@ -675,14 +803,18 @@
    "doou": 0,
    "recebeu": 1,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 0,
+    "trofeusGanhos": 0
+   },
+   "mvp": 0.0
   },
   {
    "tag": "#G2R9RGGLG",
@@ -696,14 +828,18 @@
    "doou": 0,
    "recebeu": 576,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 0,
+    "trofeusGanhos": 0
+   },
+   "mvp": 0.0
   },
   {
    "tag": "#GCGYR2CCU",
@@ -717,14 +853,18 @@
    "doou": 0,
    "recebeu": 0,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 8180,
+    "trofeusGanhos": 0
+   },
+   "mvp": 24.5
   },
   {
    "tag": "#GPQQL20L8",
@@ -738,14 +878,18 @@
    "doou": 89,
    "recebeu": 546,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 6681,
+    "trofeusGanhos": 0
+   },
+   "mvp": 23.6
   },
   {
    "tag": "#GQR8C28C0",
@@ -759,14 +903,18 @@
    "doou": 42,
    "recebeu": 35,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 0,
+    "trofeusGanhos": 0
+   },
+   "mvp": 1.7
   },
   {
    "tag": "#GUYQVCVP2",
@@ -780,14 +928,18 @@
    "doou": 700,
    "recebeu": 139,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 10553,
+    "trofeusGanhos": 0
+   },
+   "mvp": 59.7
   },
   {
    "tag": "#LLV9RG2LR",
@@ -801,14 +953,18 @@
    "doou": 0,
    "recebeu": 72,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 0,
+    "trofeusGanhos": 0
+   },
+   "mvp": 0.0
   },
   {
    "tag": "#LU98989VG",
@@ -822,14 +978,18 @@
    "doou": 0,
    "recebeu": 0,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 0,
+    "trofeusGanhos": 0
+   },
+   "mvp": 0.0
   },
   {
    "tag": "#PJYPV0ULJ",
@@ -843,14 +1003,18 @@
    "doou": 0,
    "recebeu": 66,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 0,
+    "trofeusGanhos": 0
+   },
+   "mvp": 0.0
   },
   {
    "tag": "#PP0LQRG0V",
@@ -864,14 +1028,18 @@
    "doou": 82,
    "recebeu": 0,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 0,
+    "trofeusGanhos": 0
+   },
+   "mvp": 3.3
   },
   {
    "tag": "#QJ9YJGQ8U",
@@ -885,14 +1053,18 @@
    "doou": 0,
    "recebeu": 0,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 0,
+    "trofeusGanhos": 0
+   },
+   "mvp": 0.0
   },
   {
    "tag": "#QJJ9JPJV9",
@@ -906,14 +1078,18 @@
    "doou": 136,
    "recebeu": 599,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 1,
+   "tresEstrelas": 1,
    "mediaEstrelas": 3.0,
    "mediaDestruicao": 100.0,
-   "tresEstrelas": 1
+   "temporada": {
+    "estrelas": 3,
+    "ataques": 1,
+    "tres": 1,
+    "ouroCapital": 0,
+    "trofeusGanhos": 0
+   },
+   "mvp": 40.4
   },
   {
    "tag": "#QJRJ9U2RY",
@@ -927,14 +1103,18 @@
    "doou": 41,
    "recebeu": 67,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 0,
+    "trofeusGanhos": 0
+   },
+   "mvp": 1.6
   },
   {
    "tag": "#QLCVL9C0L",
@@ -948,14 +1128,18 @@
    "doou": 1646,
    "recebeu": 795,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 0,
+    "trofeusGanhos": 0
+   },
+   "mvp": 65.8
   },
   {
    "tag": "#QPQQ9VY09",
@@ -969,14 +1153,18 @@
    "doou": 0,
    "recebeu": 0,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 0,
+    "trofeusGanhos": 0
+   },
+   "mvp": 0.0
   },
   {
    "tag": "#R2VVLUP00",
@@ -990,14 +1178,18 @@
    "doou": 587,
    "recebeu": 1221,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 8350,
+    "trofeusGanhos": 0
+   },
+   "mvp": 48.5
   },
   {
    "tag": "#RLY82JGV",
@@ -1011,14 +1203,18 @@
    "doou": 2799,
    "recebeu": 615,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 0,
+    "trofeusGanhos": 0
+   },
+   "mvp": 112.0
   },
   {
    "tag": "#YUJJL0RV8",
@@ -1032,14 +1228,18 @@
    "doou": 0,
    "recebeu": 307,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 11701,
+    "trofeusGanhos": 0
+   },
+   "mvp": 35.1
   },
   {
    "tag": "#YVRRJU2Q9",
@@ -1053,16 +1253,21 @@
    "doou": 30,
    "recebeu": 82,
    "jogosMes": 0,
-   "entrou": "2026-11-25T02:25:12Z",
-   "ultimaAtividade": "2026-11-25T02:25:12Z",
-   "guerras": 0,
-   "ataquesPerdidos": 0,
    "ataques": 0,
+   "tresEstrelas": 0,
    "mediaEstrelas": null,
    "mediaDestruicao": null,
-   "tresEstrelas": 0
+   "temporada": {
+    "estrelas": 0,
+    "ataques": 0,
+    "tres": 0,
+    "ouroCapital": 0,
+    "trofeusGanhos": 0
+   },
+   "mvp": 1.2
   }
  ],
+ "mvpGuerra": null,
  "guerraAtual": {
   "state": "inWar",
   "teamSize": 10,
@@ -1985,248 +2190,6 @@
    "membros": []
   }
  ],
- "eventos": [
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#890098Y2J",
-   "nome": "Enigma",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#PUC9PVP9U",
-   "nome": "Nicholas569",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#R0U2V9RQY",
-   "nome": "s.junior_77",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#2JUQR0PLQ",
-   "nome": "EmmaSinner",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#QPQQ9VY09",
-   "nome": "KISAME",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#G9RJ8JGPQ",
-   "nome": "brunommm",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#RLGG9PJ8",
-   "nome": "Ranierisson",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#LR9YQ9JG2",
-   "nome": "Vila Flor",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#G2UCLQQGL",
-   "nome": "Fortunato",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#Q020CV9QU",
-   "nome": "JM",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#R2VVLUP00",
-   "nome": "LUCCASSMF7",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#RLY82JGV",
-   "nome": "Souma",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#PLQ0L0289",
-   "nome": "matheus*",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#GVCRYPR2U",
-   "nome": "Maxx",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#YVRRJU2Q9",
-   "nome": "LUCAS",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#GPQQL20L8",
-   "nome": "Zeus",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#GRPPP0JG0",
-   "nome": "lipex_clash",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#L2QRYP9UU",
-   "nome": "sr sapinho",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#L9PV9VCR0",
-   "nome": "mendess",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#LLRRRRCUR",
-   "nome": "POSSEIDON",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#20P820PLR",
-   "nome": "Klebinho </>",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#9QVGJVVC9",
-   "nome": "NunesGG21",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#GPCYUGL2R",
-   "nome": "João",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#LV9LCCYLU",
-   "nome": "OuO",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#QQYJUCCC8",
-   "nome": "diogozera",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#GCL8PJ28Q",
-   "nome": "DiogoHD123",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#PCUCVQV9Y",
-   "nome": "JOSE Ro",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#98L2GPGYQ",
-   "nome": "zaque virus",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#8YR2VQL8R",
-   "nome": "Vithorass jr",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#QLCVL9C0L",
-   "nome": "KRATOS",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#2CY88R0J",
-   "nome": "ROBZ",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#G2R9RGGLG",
-   "nome": "MAYCÃO",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#GUYQVCVP2",
-   "nome": "RoyalDuck",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#2GUC00VV2",
-   "nome": "P.E.K.K.A",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#2G0QQ8VY",
-   "nome": "X GUIZÃO",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#G9PY9JQJL",
-   "nome": "D LUCAS 244",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#9U90UU2Q2",
-   "nome": "SIR.MONTECRISTO",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#QJJ9JPJV9",
-   "nome": "LEGENDS",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#PJYPV0ULJ",
-   "nome": "tiguyy",
-   "tipo": "entrou"
-  },
-  {
-   "em": "2026-11-25T02:25:12Z",
-   "tag": "#GCGYR2CCU",
-   "nome": "lucinei",
-   "tipo": "entrou"
-  }
- ],
  "historico": [
   {
    "dia": "2026-11-25",
@@ -2234,5 +2197,12 @@
    "membros": 49,
    "nivel": 6
   }
- ]
+ ],
+ "painel": {
+  "v": 1,
+  "iter": 210000,
+  "salt": "sRM1kKhr0rUPa7p8sKUC7Q==",
+  "iv": "X1CSpYFAPs6UYB2p",
+  "dados": "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"
+ }
 }
