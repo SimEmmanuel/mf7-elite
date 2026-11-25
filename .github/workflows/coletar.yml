@@ -1,6 +1,8 @@
 # Roda o coletor a cada 30 min e publica o site no GitHub Pages.
-# Segredos necessários (Settings → Secrets and variables → Actions):
-#   COC_EMAIL e COC_PASSWORD  (login do developer.clashofclans.com)
+# Configuração (Settings → Secrets and variables → Actions):
+#   Secrets:   COC_EMAIL, COC_PASSWORD   (login do developer.clashofclans.com)
+#              COC_PAINEL_SENHA          (senha do Painel da Liderança)
+#   Variables: COC_CLAN_TAG              (ex.: #2U2QJJ9J8)
 name: Coletar dados do clã
 
 on:
@@ -27,18 +29,25 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Instalar dependência de criptografia
+        run: pip install --quiet cryptography
+
       - name: Coletar
         env:
           COC_EMAIL: ${{ secrets.COC_EMAIL }}
           COC_PASSWORD: ${{ secrets.COC_PASSWORD }}
+          COC_PAINEL_SENHA: ${{ secrets.COC_PAINEL_SENHA }}
           COC_CLAN_TAG: ${{ vars.COC_CLAN_TAG }}
+          COC_EXIGIR_SENHA: "1"
         run: python3 coletor.py
 
-      - name: Salvar histórico no repositório
+      - name: Salvar histórico (cifrado) no repositório
         run: |
           git config user.name "coletor-bot"
           git config user.email "coletor-bot@users.noreply.github.com"
-          git add cla.db site/data.json
+          # o banco aberto não vai mais para o repositório público, só a versão cifrada
+          git rm --cached --quiet --ignore-unmatch cla.db
+          git add cla.db.enc site/data.json
           git diff --cached --quiet || git commit -m "Coleta $(date -u +%Y-%m-%dT%H:%MZ)"
           git push
 
