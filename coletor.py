@@ -446,6 +446,22 @@ def inicio_temporada(ref: datetime) -> datetime:
     return s
 
 
+def fmt_api(d: datetime) -> str:
+    """Mesmo formato de data da API (YYYYMMDDTHHMMSS.000Z), comparável como texto."""
+    return d.strftime("%Y%m%dT%H%M%S.000Z")
+
+
+# Pontuação do MVP — o site mostra esta tabela para todo mundo entender
+PONTOS_MVP = {
+    "estrela": 10,          # cada estrela em guerra na temporada
+    "tres_estrelas": 5,     # bônus por ataque de 3 estrelas
+    "cem_doacoes": 4,       # a cada 100 tropas doadas
+    "mil_ouro_capital": 3,  # a cada 1.000 de ouro saqueado na Capital
+    "cem_jogos": 2,         # a cada 100 pontos nos Jogos do Clã (mês)
+    "ataque_perdido": -10,  # cada ataque de guerra não usado
+}
+
+
 def exportar(con: sqlite3.Connection) -> dict:
     ult = con.execute("SELECT * FROM coleta ORDER BY id DESC LIMIT 1").fetchone()
     if not ult:
@@ -453,38 +469,84 @@ def exportar(con: sqlite3.Connection) -> dict:
     cid, em = ult["id"], ult["em"]
     clan = json.loads(con.execute("SELECT raw FROM clan_snap WHERE coleta_id=?", (cid,)).fetchone()["raw"])
     agora_dt = datetime.strptime(em, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
-    temp_ini = inicio_temporada(agora_dt).strftime("%Y-%m-%dT%H:%M:%SZ")
-
-    # Jogos do clã: diferença da conquista desde a 1ª foto do mês corrente
+    temp_dt = inicio_temporada(agora_dt)
+    temp_ini, temp_api = temp_dt.strftime("%Y-%m-%dT%H:%M:%SZ"), fmt_api(temp_dt)
     mes_ini = agora_dt.replace(day=1, hour=0, minute=0, second=0).strftime("%Y-%m-%dT%H:%M:%SZ")
+    P = PONTOS_MVP
 
-    membros = []
+    publicos, sigilosos = [], []
     for m in con.execute("SELECT * FROM membro_snap WHERE coleta_id=? ORDER BY trofeus DESC", (cid,)):
-        info = con.execute("SELECT * FROM membro WHERE tag=?", (m["tag"],)).fetchone()
+        tag = m["tag"]
+        info = con.execute("SELECT * FROM membro WHERE tag=?", (tag,)).fetchone()
         base_jogos = con.execute(
             "SELECT jogos_total FROM membro_snap WHERE tag=? AND em>=? AND jogos_total IS NOT NULL ORDER BY em LIMIT 1",
-            (m["tag"], mes_ini)).fetchone()
+            (tag, mes_ini)).fetchone()
         jogos_mes = (m["jogos_total"] - base_jogos["jogos_total"]) if (base_jogos and m["jogos_total"] is not None) else None
+        base_trof = con.execute("SELECT trofeus FROM membro_snap WHERE tag=? AND em>=? ORDER BY em LIMIT 1",
+                                (tag, temp_ini)).fetchone()
+        trof_ganhos = (m["trofeus"] - base_trof["trofeus"]) if base_trof else 0
+        # guerra — total
         g = con.execute("""
             SELECT COUNT(*) n, COALESCE(SUM(gm.ataques_max),0) possiveis, COALESCE(SUM(gm.ataques_usados),0) usados
             FROM guerra_membro gm JOIN guerra g ON g.id=gm.guerra_id
-            WHERE gm.tag=? AND g.estado='warEnded'""", (m["tag"],)).fetchone()
+            WHERE gm.tag=? AND g.estado='warEnded'""", (tag,)).fetchone()
         a = con.execute("""
             SELECT COUNT(*) n, AVG(estrelas) media, AVG(destruicao) destr,
                    SUM(CASE WHEN estrelas=3 THEN 1 ELSE 0 END) tres
-            FROM guerra_ataque WHERE atacante=?""", (m["tag"],)).fetchone()
-        membros.append({
-            "tag": m["tag"], "nome": m["nome"], "cargo": m["cargo"], "cv": m["cv"],
-            "xp": m["xp"], "trofeus": m["trofeus"], "trofeusBB": m["trofeus_bb"],
-            "liga": m["liga"], "doou": m["doou"], "recebeu": m["recebeu"],
-            "jogosMes": jogos_mes,
+            FROM guerra_ataque WHERE atacante=?""", (tag,)).fetchone()
+        # guerra — temporada (inclui a guerra em andamento)
+        at = con.execute("""
+            SELECT COUNT(*) n, COALESCE(SUM(ga.estrelas),0) estrelas,
+                   SUM(CASE WHEN ga.estrelas=3 THEN 1 ELSE 0 END) tres
+            FROM guerra_ataque ga JOIN guerra g ON g.id=ga.guerra_id
+            WHERE ga.atacante=? AND g.inicio>=?""", (tag, temp_api)).fetchone()
+        gt = con.execute("""
+            SELECT COALESCE(SUM(gm.ataques_max - gm.ataques_usados),0) perdidos
+            FROM guerra_membro gm JOIN guerra g ON g.id=gm.guerra_id
+            WHERE gm.tag=? AND g.estado='warEnded' AND g.inicio>=?""", (tag, temp_api)).fetchone()
+        rc = con.execute("""
+            SELECT COALESCE(SUM(rm.ouro),0) ouro FROM raid_membro rm JOIN raid r ON r.inicio=rm.inicio
+            WHERE rm.tag=? AND r.inicio>=?""", (tag, temp_api)).fetchone()
+
+        estrelas_t, tres_t, perdidos_t = at["estrelas"], at["tres"] or 0, gt["perdidos"]
+        ouro_t, doou = rc["ouro"], m["doou"] or 0
+        pontos = (estrelas_t * P["estrela"] + tres_t * P["tres_estrelas"]
+                  + doou / 100 * P["cem_doacoes"] + ouro_t / 1000 * P["mil_ouro_capital"]
+                  + (jogos_mes or 0) / 100 * P["cem_jogos"] + perdidos_t * P["ataque_perdido"])
+
+        publicos.append({
+            "tag": tag, "nome": m["nome"], "cargo": m["cargo"], "cv": m["cv"], "xp": m["xp"],
+            "trofeus": m["trofeus"], "trofeusBB": m["trofeus_bb"], "liga": m["liga"],
+            "doou": m["doou"], "recebeu": m["recebeu"], "jogosMes": jogos_mes,
+            "ataques": a["n"], "tresEstrelas": a["tres"] or 0,
+            "mediaEstrelas": round(a["media"], 2) if a["media"] is not None else None,
+            "mediaDestruicao": round(a["destr"], 1) if a["destr"] is not None else None,
+            "temporada": {"estrelas": estrelas_t, "ataques": at["n"], "tres": tres_t,
+                          "ouroCapital": ouro_t, "trofeusGanhos": trof_ganhos},
+            "mvp": round(pontos, 1),
+        })
+        sigilosos.append({
+            "tag": tag, "nome": m["nome"], "cargo": m["cargo"], "cv": m["cv"],
+            "doou": m["doou"], "recebeu": m["recebeu"],
             "entrou": info["primeira_vez"] if info else None,
             "ultimaAtividade": info["ultima_atividade"] if info else None,
-            "guerras": g["n"], "ataquesPerdidos": (g["possiveis"] - g["usados"]),
-            "ataques": a["n"], "mediaEstrelas": round(a["media"], 2) if a["media"] is not None else None,
-            "mediaDestruicao": round(a["destr"], 1) if a["destr"] is not None else None,
-            "tresEstrelas": a["tres"] or 0,
+            "guerras": g["n"], "ataquesPerdidos": g["possiveis"] - g["usados"],
+            "perdidosTemporada": perdidos_t, "mediaEstrelas": publicos[-1]["mediaEstrelas"],
+            "jogosMes": jogos_mes, "mvp": publicos[-1]["mvp"],
         })
+
+    # MVP da última guerra encerrada (com ataques registrados)
+    mvp_guerra = None
+    ug = con.execute("""SELECT g.id, g.adversario, g.fim, g.resultado FROM guerra g
+                        WHERE g.estado='warEnded' AND EXISTS (SELECT 1 FROM guerra_ataque a WHERE a.guerra_id=g.id)
+                        ORDER BY g.fim DESC LIMIT 1""").fetchone()
+    if ug:
+        top = con.execute("""
+            SELECT gm.nome, gm.tag, SUM(a.estrelas) estrelas, AVG(a.destruicao) destr, COUNT(*) ataques
+            FROM guerra_ataque a JOIN guerra_membro gm ON gm.guerra_id=a.guerra_id AND gm.tag=a.atacante
+            WHERE a.guerra_id=? GROUP BY a.atacante ORDER BY estrelas DESC, destr DESC LIMIT 3""", (ug["id"],)).fetchall()
+        mvp_guerra = {"adversario": ug["adversario"], "fim": ug["fim"], "resultado": ug["resultado"],
+                      "top": [dict(t) | {"destr": round(t["destr"], 1)} for t in top]}
 
     guerra_atual = None
     gw = con.execute("SELECT raw, tipo FROM guerra WHERE raw IS NOT NULL ORDER BY inicio DESC LIMIT 1").fetchone()
@@ -504,16 +566,16 @@ def exportar(con: sqlite3.Connection) -> dict:
             "SELECT tag, nome, ataques, limite, ouro FROM raid_membro WHERE inicio=? ORDER BY ouro DESC", (r["inicio"],))]
         raids.append(d)
 
-    eventos = [dict(r) for r in con.execute("SELECT * FROM evento ORDER BY em DESC LIMIT 40")]
-
+    eventos = [dict(r) for r in con.execute("SELECT * FROM evento ORDER BY em DESC LIMIT 60")]
     historico = [dict(r) for r in con.execute("""
         SELECT substr(em,1,10) dia, MAX(pontos) pontos, MAX(membros) membros, MAX(nivel) nivel
         FROM clan_snap GROUP BY dia ORDER BY dia DESC LIMIT 90""")][::-1]
 
+    painel = {"membros": sigilosos, "eventos": eventos, "geradoEm": em}
+    senha = os.environ.get("COC_PAINEL_SENHA")
+
     dados = {
-        "geradoEm": em,
-        "exemplo": False,
-        "inicioTemporada": temp_ini,
+        "geradoEm": em, "exemplo": False, "inicioTemporada": temp_ini, "pontosMvp": PONTOS_MVP,
         "cla": {
             "tag": clan.get("tag"), "nome": clan.get("name"), "descricao": clan.get("description"),
             "nivel": clan.get("clanLevel"), "pontos": clan.get("clanPoints"),
@@ -532,27 +594,94 @@ def exportar(con: sqlite3.Connection) -> dict:
             "badge": (clan.get("badgeUrls") or {}).get("medium"),
             "labels": [l.get("name") for l in clan.get("labels", [])],
         },
-        "membros": membros,
+        "membros": publicos,
+        "mvpGuerra": mvp_guerra,
         "guerraAtual": guerra_atual,
         "guerras": guerras,
         "raids": raids,
-        "eventos": eventos,
         "historico": historico,
+        "painel": cifrar_json(painel, senha) if senha else None,
     }
+    if not senha:
+        print("AVISO: COC_PAINEL_SENHA não definida — o painel da liderança não foi gerado.", file=sys.stderr)
     OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
     OUT_JSON.write_text(json.dumps(dados, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"Site atualizado: {OUT_JSON}")
     return dados
 
 
+# --------------------------------------------------------------------------
+# Criptografia (painel da liderança e banco de histórico)
+#   PBKDF2-SHA256 → chave AES-256-GCM. O navegador decifra com a Web Crypto API.
+# --------------------------------------------------------------------------
+
+ITER = 210_000
+
+
+def _chave(senha: str, salt: bytes) -> bytes:
+    import hashlib
+    return hashlib.pbkdf2_hmac("sha256", senha.encode("utf-8"), salt, ITER, dklen=32)
+
+
+def _aes():
+    try:
+        from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+        return AESGCM
+    except ImportError:
+        sys.exit("Falta o pacote 'cryptography' (pip install cryptography).")
+
+
+def cifrar_json(obj, senha: str) -> dict:
+    import base64
+    salt, iv = os.urandom(16), os.urandom(12)
+    ct = _aes()(_chave(senha, salt)).encrypt(iv, json.dumps(obj, ensure_ascii=False).encode("utf-8"), None)
+    b = lambda x: base64.b64encode(x).decode()
+    return {"v": 1, "iter": ITER, "salt": b(salt), "iv": b(iv), "dados": b(ct)}
+
+
+def decifrar_json(pac: dict, senha: str):
+    import base64
+    d = base64.b64decode
+    return json.loads(_aes()(_chave(senha, d(pac["salt"]))).decrypt(d(pac["iv"]), d(pac["dados"]), None))
+
+
+DB_ENC = DB_PATH.with_suffix(DB_PATH.suffix + ".enc")
+
+
+def abrir_db_cifrado(senha: str):
+    """cla.db.enc → cla.db (só se ainda não houver um cla.db local)."""
+    if DB_PATH.exists() or not DB_ENC.exists():
+        return
+    raw = DB_ENC.read_bytes()
+    salt, iv, ct = raw[:16], raw[16:28], raw[28:]
+    try:
+        DB_PATH.write_bytes(_aes()(_chave(senha, salt)).decrypt(iv, ct, None))
+    except Exception:
+        sys.exit("ERRO: não consegui abrir cla.db.enc — a senha COC_PAINEL_SENHA mudou? "
+                 "Volte a senha antiga ou apague cla.db.enc (perde o histórico).")
+
+
+def fechar_db_cifrado(senha: str):
+    salt, iv = os.urandom(16), os.urandom(12)
+    DB_ENC.write_bytes(salt + iv + _aes()(_chave(senha, salt)).encrypt(iv, DB_PATH.read_bytes(), None))
+
+
 def main():
     ap = argparse.ArgumentParser(description="Coletor do clã de Clash of Clans")
     ap.add_argument("--so-exportar", action="store_true", help="não chama a API, só gera o data.json")
     args = ap.parse_args()
+    senha = os.environ.get("COC_PAINEL_SENHA")
+    if os.environ.get("COC_EXIGIR_SENHA") and not senha:
+        sys.exit("ERRO: cadastre o secret COC_PAINEL_SENHA no GitHub (Settings → Secrets → Actions).")
+    if senha:
+        abrir_db_cifrado(senha)
     con = abrir_db()
     if not args.so_exportar:
         coletar(Api(obter_token()), con)
     exportar(con)
+    con.close()
+    if senha:
+        fechar_db_cifrado(senha)
 
 
 if __name__ == "__main__":
