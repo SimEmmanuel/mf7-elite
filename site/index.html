@@ -61,12 +61,18 @@ nav a.lid{color:var(--ouro)}
 /* seção temática */
 .tema{background:linear-gradient(180deg,color-mix(in srgb,var(--t) 13%,#0d0d11),#0d0d11 420px);border-top:3px solid var(--t)}
 .tema:nth-of-type(even){background:linear-gradient(180deg,color-mix(in srgb,var(--t) 13%,#131318),#131318 420px)}
-.sec-h{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:end;margin-bottom:24px}
+.sec-h{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr) minmax(0,1fr);gap:clamp(12px,3vw,32px);align-items:center;margin-bottom:28px;text-align:center}
+.sec-t .sub{margin-inline:auto}
 .sec-k{display:inline-block;font-weight:900;font-size:14px;color:var(--t);margin-bottom:4px}
-.perso{width:clamp(110px,14vw,170px);aspect-ratio:1;margin:0;position:relative;display:grid;place-items:center}
-.perso::before{content:"";position:absolute;inset:12% 6% 0;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--t) 55%,transparent),transparent)}
-.perso img,.perso svg{position:relative;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 10px 14px #000b)}
-@media(max-width:600px){.sec-h{grid-template-columns:minmax(0,1fr) 96px}.perso{width:96px}}
+.perso{margin:0;position:relative;display:grid;place-items:end center;height:clamp(140px,20vw,240px)}
+.perso::before{content:"";position:absolute;inset:18% 4% 0;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--t) 50%,transparent),transparent)}
+.perso img{position:relative;max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 12px 16px #000c)}
+.perso svg{position:relative;width:auto;height:72%;filter:drop-shadow(0 10px 14px #000b)}
+.perso.vazio::before{display:none}
+.sec-h.so-emblema{grid-template-columns:minmax(0,1fr)}
+.sec-h.so-emblema .perso.b{display:none}
+.sec-h.so-emblema .perso.a{height:110px;width:130px;justify-self:center;order:-1}
+@media(max-width:600px){.sec-h{grid-template-columns:72px minmax(0,1fr) 72px;gap:8px}.perso{height:110px}.sec-h.so-emblema .perso.a{height:84px}}
 /* placar */
 .placar{background:#120d10;border:2px solid #3a2228;border-radius:22px;padding:clamp(16px,2.4vw,26px);box-shadow:0 18px 40px #0009}
 .placar-top{display:flex;justify-content:space-between;gap:10px;font-size:14px;color:var(--mute);margin-bottom:10px;flex-wrap:wrap}
@@ -172,7 +178,7 @@ footer{background:#060608;color:var(--mute);font-size:14px}footer p{margin:4px 0
 </div></header>
 
 <section class="band tema" id="guerra" style="--t:#e3202d"><div class="wrap">
- <div class="sec-h"><div><span class="sec-k">Campo de batalha</span><h2>Guerra</h2><p class="sub" id="guerraSub">Placar ao vivo e quem ainda tem ataque para usar.</p></div><figure class="perso" data-p="guerra"></figure></div>
+ <div class="sec-h" data-p="guerra"><figure class="perso a"></figure><div class="sec-t"><span class="sec-k">Campo de batalha</span><h2>Guerra</h2><p class="sub" id="guerraSub">Placar ao vivo e quem ainda tem ataque para usar.</p></div><figure class="perso b"></figure></div>
  <div class="grid2">
   <div><div class="placar" id="placar"></div>
    <h3 style="margin-top:26px">Escalação</h3>
@@ -182,7 +188,7 @@ footer{background:#060608;color:var(--mute);font-size:14px}footer p{margin:4px 0
 </div></section>
 
 <section class="band tema" id="hall" style="--t:#f6b80b"><div class="wrap">
- <div class="sec-h"><div><span class="sec-k">Glória da temporada</span><h2>Hall da Fama</h2><p class="sub" id="hallSub">Quem mais ajudou o clã nesta temporada. Guerra, doações, Capital e Jogos valem pontos.</p></div><figure class="perso" data-p="hall"></figure></div>
+ <div class="sec-h" data-p="hall"><figure class="perso a"></figure><div class="sec-t"><span class="sec-k">Glória da temporada</span><h2>Hall da Fama</h2><p class="sub" id="hallSub">Quem mais ajudou o clã nesta temporada. Guerra, doações, Capital e Jogos valem pontos.</p></div><figure class="perso b"></figure></div>
  <div class="podio" id="podio"></div>
  <div class="cards" id="premios"></div>
  <div class="card eu"><div><h3>Qual é a minha posição?</h3><select id="euSel" aria-label="Escolha seu nome"></select></div><div id="euRes" class="sub">Escolha seu nome para ver sua posição e quanto falta para subir.</div></div>
@@ -190,7 +196,7 @@ footer{background:#060608;color:var(--mute);font-size:14px}footer p{margin:4px 0
 </div></section>
 
 <section class="band tema" id="membros" style="--t:#ff8a1f"><div class="wrap">
- <div class="sec-h"><div><span class="sec-k">A tropa</span><h2>Membros</h2><p class="sub">Clique no título da coluna para ordenar. Doações contam desde o início da temporada.</p></div><figure class="perso" data-p="membros"></figure></div>
+ <div class="sec-h" data-p="membros"><figure class="perso a"></figure><div class="sec-t"><span class="sec-k">A tropa</span><h2>Membros</h2><p class="sub">Clique no título da coluna para ordenar. Doações contam desde o início da temporada.</p></div><figure class="perso b"></figure></div>
  <div class="ferr"><input id="busca" type="search" placeholder="Buscar por nome ou tag" aria-label="Buscar membro">
   <select id="fCargo" aria-label="Filtrar por cargo"><option value="">Todos os cargos</option><option value="leader">Líder</option><option value="coLeader">Colíder</option><option value="admin">Ancião</option><option value="member">Membro</option></select></div>
  <div class="scroll"><table class="stack" id="tabMembros"><thead><tr>
@@ -201,13 +207,13 @@ footer{background:#060608;color:var(--mute);font-size:14px}footer p{margin:4px 0
 </div></section>
 
 <section class="band tema" id="capital" style="--t:#3d8bff"><div class="wrap">
- <div class="sec-h"><div><span class="sec-k">Fim de semana de Raid</span><h2>Capital do Clã</h2><p class="sub" id="raidSub"></p></div><figure class="perso" data-p="capital"></figure></div>
+ <div class="sec-h" data-p="capital"><figure class="perso a"></figure><div class="sec-t"><span class="sec-k">Fim de semana de Raid</span><h2>Capital do Clã</h2><p class="sub" id="raidSub"></p></div><figure class="perso b"></figure></div>
  <div class="grid2"><div class="card"><h3>Ouro saqueado por membro</h3><ol class="rank" id="rkRaid"></ol></div>
  <div class="card"><h3>Fins de semana anteriores</h3><ol class="rank" id="raidHist"></ol></div></div>
 </div></section>
 
 <section class="band tema" id="regras" style="--t:#a64dff"><div class="wrap">
- <div class="sec-h"><div><span class="sec-k">Código do clã</span><h2>Regras</h2><p class="sub">Tiradas da descrição do clã. A liderança pode completar.</p></div><figure class="perso" data-p="regras"></figure></div>
+ <div class="sec-h" data-p="regras"><figure class="perso a"></figure><div class="sec-t"><span class="sec-k">Código do clã</span><h2>Regras</h2><p class="sub">Tiradas da descrição do clã. A liderança pode completar.</p></div><figure class="perso b"></figure></div>
  <ol class="regras">
   <li><b>Evolução constante:</b> o foco do clã é evoluir a vila. Sempre tenha algo upando.</li>
   <li><b>Guerra:</b> o clã é focado em guerras. Entrou na escalação, use todos os ataques.</li>
@@ -217,7 +223,7 @@ footer{background:#060608;color:var(--mute);font-size:14px}footer p{margin:4px 0
 </div></section>
 
 <section class="band tema" id="lideranca" style="--t:#9aa3b5"><div class="wrap">
- <div class="sec-h"><div><span class="sec-k">Área restrita</span><h2>Painel da Liderança</h2><p class="sub" id="lidSub">Só para líder e colíderes. Os dados ficam cifrados e só abrem com a senha.</p></div><figure class="perso" data-p="lideranca"></figure></div>
+ <div class="sec-h" data-p="lideranca"><figure class="perso a"></figure><div class="sec-t"><span class="sec-k">Área restrita</span><h2>Painel da Liderança</h2><p class="sub" id="lidSub">Só para líder e colíderes. Os dados ficam cifrados e só abrem com a senha.</p></div><figure class="perso b"></figure></div>
  <div id="lidTrancado" class="card cadeado">
   <h3>Acesso da liderança</h3>
   <form id="formSenha"><input type="password" id="senha" placeholder="Senha da liderança" autocomplete="current-password" aria-label="Senha da liderança" required><button class="btn" type="submit">Entrar</button></form>
@@ -276,8 +282,15 @@ const ICO={
  jogos:'<rect x="8" y="18" width="48" height="30" rx="14" fill="#fff"/><path d="M20 27v12M14 33h12" stroke="#000" stroke-width="4"/><circle cx="42" cy="30" r="3.5" fill="var(--red)"/><circle cx="48" cy="37" r="3.5" fill="var(--red)"/>',
  espada:'<path d="M46 8h10v10L28 46l-10-10z" fill="#fff"/><path d="M14 40l10 10M10 54l8-8" stroke="var(--red)" stroke-width="6" stroke-linecap="round"/>'};
 const svg=(k,cor)=>`<svg viewBox="0 0 64 64" aria-hidden="true" style="${cor?'--t:'+cor:''}">${ICO[k]||''}</svg>`;
-// personagem do kit oficial: img/<secao>.png — se não existir, mostra o emblema
-document.querySelectorAll('.perso').forEach(f=>{const k=f.dataset.p,img=new Image();img.alt='';img.onload=()=>{f.innerHTML='';f.appendChild(img)};img.onerror=()=>{f.innerHTML=`<svg viewBox="0 0 120 120" aria-hidden="true"><path d="M60 6 106 22v34c0 28-20 50-46 58C34 106 14 84 14 56V22z" fill="#16161b" stroke="var(--t)" stroke-width="5"/><g transform="translate(28 26)">${ICO[k]||''}</g></svg>`};img.src=`img/${k}.png`});
+// personagens do kit oficial: img/<secao>.png (lado esquerdo) e img/<secao>-2.png (lado direito)
+const carregaImg=base=>new Promise(ok=>{const ext=['png','webp','jpg'];let i=0;const img=new Image();img.alt='';img.decoding='async';img.onload=()=>ok(img);img.onerror=()=>{i++;if(i<ext.length)img.src=`${base}.${ext[i]}`;else ok(null)};img.src=`${base}.${ext[0]}`});
+const emblema=k=>`<svg viewBox="0 0 120 120" aria-hidden="true"><path d="M60 6 106 22v34c0 28-20 50-46 58C34 106 14 84 14 56V22z" fill="#16161b" stroke="var(--t)" stroke-width="5"/><g transform="translate(28 26)">${ICO[k]||''}</g></svg>`;
+document.querySelectorAll('.sec-h').forEach(async h=>{const k=h.dataset.p,A=h.querySelector('.perso.a'),B=h.querySelector('.perso.b');
+ const [i1,i2]=await Promise.all([carregaImg(`img/${k}`),carregaImg(`img/${k}-2`)]);
+ if(!i1&&!i2){h.classList.add('so-emblema');A.innerHTML=emblema(k);return}
+ if(i1)A.appendChild(i1);else A.classList.add('vazio');
+ if(i2)B.appendChild(i2);else B.classList.add('vazio');
+});
 
 async function carregar(){
  try{const r=await fetch('data.json',{cache:'no-store'});if(r.ok)return await r.json()}catch(e){}
