@@ -283,7 +283,7 @@ const ICO={
  espada:'<path d="M46 8h10v10L28 46l-10-10z" fill="#fff"/><path d="M14 40l10 10M10 54l8-8" stroke="var(--red)" stroke-width="6" stroke-linecap="round"/>'};
 const svg=(k,cor)=>`<svg viewBox="0 0 64 64" aria-hidden="true" style="${cor?'--t:'+cor:''}">${ICO[k]||''}</svg>`;
 // personagens do kit oficial: img/<secao>.png (lado esquerdo) e img/<secao>-2.png (lado direito)
-const carregaImg=base=>new Promise(ok=>{const ext=['png','webp','jpg'];let i=0;const img=new Image();img.alt='';img.decoding='async';img.onload=()=>ok(img);img.onerror=()=>{i++;if(i<ext.length)img.src=`${base}.${ext[i]}`;else ok(null)};img.src=`${base}.${ext[0]}`});
+const carregaImg=base=>new Promise(ok=>{const ext=['png','png.png','webp','jpg','webp.webp','jpg.jpg'];let i=0;const img=new Image();img.alt='';img.decoding='async';img.onload=()=>ok(img);img.onerror=()=>{i++;if(i<ext.length)img.src=`${base}.${ext[i]}`;else ok(null)};img.src=`${base}.${ext[0]}`});
 const emblema=k=>`<svg viewBox="0 0 120 120" aria-hidden="true"><path d="M60 6 106 22v34c0 28-20 50-46 58C34 106 14 84 14 56V22z" fill="#16161b" stroke="var(--t)" stroke-width="5"/><g transform="translate(28 26)">${ICO[k]||''}</g></svg>`;
 document.querySelectorAll('.sec-h').forEach(async h=>{const k=h.dataset.p,A=h.querySelector('.perso.a'),B=h.querySelector('.perso.b');
  const [i1,i2]=await Promise.all([carregaImg(`img/${k}`),carregaImg(`img/${k}-2`)]);
