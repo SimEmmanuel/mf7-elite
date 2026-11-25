@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MF7 ELITE · Clã</title>
-<link rel="icon" href="img/icone.png">
+<link rel="icon" href="icone.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;600;800;900&display=swap" rel="stylesheet">
@@ -160,7 +160,7 @@ footer{background:#060608;color:var(--mute);font-size:14px}footer p{margin:4px 0
 <a href="#guerra">Guerra</a><a href="#hall">Hall da Fama</a><a href="#membros">Membros</a><a href="#capital">Capital</a><a href="#regras">Regras</a><a href="#lideranca" class="lid">Liderança</a></div></nav>
 
 <header class="hero band"><div class="wrap">
- <div class="brasao"><img id="logo" src="img/logo.jpg" alt="Brasão do clã MF7 ELITE"></div>
+ <div class="brasao"><img id="logo" src="logo.jpg" alt="Brasão do clã MF7 ELITE"></div>
  <div>
   <div class="tag" id="tag">#2U2QJJ9J8</div>
   <h1 class="nome"><span class="na" id="nomeA">MF7</span> <span class="nb" id="nomeB">ELITE</span></h1>
@@ -276,8 +276,8 @@ const ICO={
  jogos:'<rect x="8" y="18" width="48" height="30" rx="14" fill="#fff"/><path d="M20 27v12M14 33h12" stroke="#000" stroke-width="4"/><circle cx="42" cy="30" r="3.5" fill="var(--red)"/><circle cx="48" cy="37" r="3.5" fill="var(--red)"/>',
  espada:'<path d="M46 8h10v10L28 46l-10-10z" fill="#fff"/><path d="M14 40l10 10M10 54l8-8" stroke="var(--red)" stroke-width="6" stroke-linecap="round"/>'};
 const svg=(k,cor)=>`<svg viewBox="0 0 64 64" aria-hidden="true" style="${cor?'--t:'+cor:''}">${ICO[k]||''}</svg>`;
-// personagem do kit oficial: img/personagens/<secao>.png — se não existir, mostra o emblema
-document.querySelectorAll('.perso').forEach(f=>{const k=f.dataset.p,img=new Image();img.alt='';img.onload=()=>{f.innerHTML='';f.appendChild(img)};img.onerror=()=>{f.innerHTML=`<svg viewBox="0 0 120 120" aria-hidden="true"><path d="M60 6 106 22v34c0 28-20 50-46 58C34 106 14 84 14 56V22z" fill="#16161b" stroke="var(--t)" stroke-width="5"/><g transform="translate(28 26)">${ICO[k]||''}</g></svg>`};img.src=`img/personagens/${k}.png`});
+// personagem do kit oficial: img/<secao>.png — se não existir, mostra o emblema
+document.querySelectorAll('.perso').forEach(f=>{const k=f.dataset.p,img=new Image();img.alt='';img.onload=()=>{f.innerHTML='';f.appendChild(img)};img.onerror=()=>{f.innerHTML=`<svg viewBox="0 0 120 120" aria-hidden="true"><path d="M60 6 106 22v34c0 28-20 50-46 58C34 106 14 84 14 56V22z" fill="#16161b" stroke="var(--t)" stroke-width="5"/><g transform="translate(28 26)">${ICO[k]||''}</g></svg>`};img.src=`img/${k}.png`});
 
 async function carregar(){
  try{const r=await fetch('data.json',{cache:'no-store'});if(r.ok)return await r.json()}catch(e){}
